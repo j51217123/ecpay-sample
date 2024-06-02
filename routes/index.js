@@ -55,12 +55,12 @@ router.get('/', (req, res) => {
   const create = new ecpay_payment(options);
 
   // 注意：在此事直接提供 html + js 直接觸發的範例，直接從前端觸發付款行為
-  // const html = create.payment_client.aio_check_out_all(base_param);
-  // console.log(html);
+  const html = create.payment_client.aio_check_out_all(base_param);
+  console.log(html);
 
   res.render('index', {
     title: 'Express',
-    // html,
+    html,
   });
 });
 
